@@ -238,6 +238,35 @@ body{
 
 
 
+/*===========Animations==============*/
+
+/*Mobile horizontal animation*/
+
+@-webkit-keyframes movebg {
+  0%   { background-position: right top }
+  50%  { background-position: left top }
+  100% { background-position: right top }
+}
+@-moz-keyframes movebg {
+   0%  { background-position: right top }
+  50%  { background-position: left top }
+  100% { background-position: right top }
+}
+}
+@-o-keyframes movebg {
+   0%  { background-position: right top }
+  50%  { background-position: left top }
+  100% { background-position: right top }
+}
+@keyframes movebg {
+   0%  { background-position: right top }
+  50%  { background-position: left top }
+  100% { background-position: right top }
+}
+
+
+
+
 
 /*Break points for media query*/
 
@@ -301,6 +330,14 @@ body{
         .wrapper{
             padding-left: 10px;
             padding-right: 10px;
+        }
+
+        #start-section{
+            background-size: auto 100%;
+            -webkit-animation: movebg 20s infinite ease-in-out; /* Safari 4+ */
+            -moz-animation:    movebg 20s infinite ease-in-out; /* Fx 5+ */
+            -o-animation:      movebg 20s infinite ease-in-out; /* Opera 12+ */
+            animation:         movebg 20s infinite ease-in-out; /* IE 10+, Fx 29+ */
         }
 
     

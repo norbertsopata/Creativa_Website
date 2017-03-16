@@ -114,7 +114,7 @@
             menu: false,
             anchors:[],
             lockAnchors: false,
-            navigation: false,
+            navigation: true,
             navigationPosition: 'right',
             navigationTooltips: [],
             showActiveTooltip: false,
