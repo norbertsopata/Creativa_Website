@@ -42,11 +42,11 @@
 
 <!-- FullPage CSS -->
 	<link rel="stylesheet" type="text/css" href="assets/css/jquery.fullPage.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/examples.css" />
 
 <!-- FullPage JS -->
-
+	
 	 <script type="text/javascript" src="assets/js/jquery.fullPage.js"></script>
+	 <script type="text/javascript" src="assets/js/main.js"></script>
 
     <!--[if IE]>
         <script type="text/javascript">
@@ -59,6 +59,7 @@
             $('#fullpage').fullpage({
               anchors: ['start', 'projekty', 'onas', 'kontakt', 'lastPage'],
               menu: '#menu',
+			  navigation: true,
             });
         });
     </script>
@@ -74,8 +75,14 @@
 	  <div class="logo-section" id="logo">
 	  	<a href="" class="logo-section__image">
 	  		<img src="assets/img/logo.png" alt="Creativa Logo" class="logo-section__img">
-
 	  	</a>
+	  </div>
+	  <div class="hamburger sm-only">
+		<button type="button" class="navbar-toggle">
+			<span class="navbar-toggle__bar"></span>
+			<span class="navbar-toggle__bar"></span>
+			<span class="navbar-toggle__bar"></span>
+		</button>
 	  </div>
 		<nav class="navigation">
 			<ul class="nav-list" id="menu">
@@ -87,6 +94,7 @@
 		</nav>
 	 </div>
 </header>
+
 
 <!-- Main content section -->
 	<div id="fullpage">

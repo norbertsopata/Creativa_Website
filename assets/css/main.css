@@ -104,6 +104,14 @@ input, select {
     vertical-align:middle;
 }
 
+button{
+    border:none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    background: none;
+}
+
 /*Main styles*/
 
 html{
@@ -118,6 +126,38 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
+/*hamburger*/
+
+.hamburger{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-toggle{
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.navbar-toggle__bar{
+    display: block;
+    margin-top: 6px;
+    height: 2px;
+    width: 100%;
+    background: white;
+    border-radius: 10%;
+}
+
+.navbar-toggle__bar:first-child{
+    margin-top: 0px;
+}
 
 .wrapper{
     margin: 0 auto;
@@ -311,6 +351,15 @@ body{
 
     /* Small Devices, Tablets */
     @media only screen and (max-width : 768px) {
+
+        .sm-only{
+            display: flex;
+        }
+        
+        .deskop-hidden{
+            display: none;
+        }
+
         .main-header{
             display: flex;
         }
@@ -326,6 +375,7 @@ body{
         .navigation{
             display: none;
         }
+    
 
         .wrapper{
             padding-left: 10px;
@@ -338,6 +388,12 @@ body{
             -moz-animation:    movebg 20s infinite ease-in-out; /* Fx 5+ */
             -o-animation:      movebg 20s infinite ease-in-out; /* Opera 12+ */
             animation:         movebg 20s infinite ease-in-out; /* IE 10+, Fx 29+ */
+        }
+        
+        /*Hide navigation when small screen*/
+
+        #fp-nav{
+            display: none;
         }
 
     
