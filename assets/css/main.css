@@ -106,6 +106,86 @@ input, select {
 
 /*Main styles*/
 
+html{
+    -webkit-font-smoothing: antialiased;
+    color: #3C4146;
+
+}
+
+body{
+    line-height: 1;
+}
+
+.wrapper{
+    margin: 0 auto;
+    max-width: 1200px;
+    padding-left: 75px;
+    padding-right: 75px;
+}
+
+
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    background: #232323;
+    z-index: 9999;
+}
+
+.logo-section{ 
+    display: flex;
+    height: 60px;
+    align-items: center;
+    float: left;
+}
+
+.logo-section__image{
+    display: block;
+    max-width: 250px;
+}
+
+
+
+.logo-section__image img{
+    height: auto;
+    width: 100%;
+
+}
+
+.navigation{
+    float: right;
+}
+
+.nav-list{
+    list-style-type: none;
+}
+
+.nav-list__item{
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.nav-list__item:last-child{
+    margin-right: 0;
+    
+}
+
+.nav-list__item a{
+    display: block;
+    line-height: 60px;
+    padding: 0 20px;
+}
+
+.nav-list__item--style a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+}
+
+
+
 
 
 /*Break points for media query*/

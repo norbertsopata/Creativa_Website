@@ -55,7 +55,7 @@
         $(document).ready(function() {
             $('#fullpage').fullpage({
               sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
-              anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+              anchors: ['start', 'projekty', 'onas', 'kontakt', 'lastPage'],
               menu: '#menu',
             });
         });
@@ -67,13 +67,26 @@
 <body>
 
 <!-- Header Section -->
-<header class="top-header">
-	<ul id="menu">
-	    <li data-menuanchor="firstPage" class="active"><a href="#firstPage">First slide</a></li>
-	    <li data-menuanchor="secondPage"><a href="#secondPage">Second slide</a></li>
-	    <li data-menuanchor="3rdPage"><a href="#3rdPage">Third slide</a></li>
-	</ul>
+<header class="main-header">
+ 	<div class="wrapper">
+	  <div class="logo-section" id="logo">
+	  	<a href="" class="logo-section__image">
+	  		<img src="assets/img/logo.png" alt="Creativa Logo">
+
+	  	</a>
+	  </div>
+		<nav class="navigation">
+			<ul class="nav-list" id="menu">
+			    <li data-menuanchor="start" class="nav-list__item nav-list__item--style active"><a href="#firstPage">start</a></li>
+			    <li data-menuanchor="projekty" class="nav-list__item nav-list__item--style"><a href="#secondPage">projekty</a></li>
+			    <li data-menuanchor="onas" class="nav-list__item nav-list__item--style"><a href="#3rdPage">o nas</a></li>
+			    <li data-menuanchor="kontakt" class="nav-list__item nav-list__item--style"><a href="#3rdPage">kontakt</a></li>
+			</ul>
+		</nav>
+	 </div>
 </header>
+
+<!-- Main content section -->
 	<div id="fullpage">
 	    <div class="section " id="section0">
 
