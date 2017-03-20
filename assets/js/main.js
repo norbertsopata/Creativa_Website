@@ -1,13 +1,40 @@
 
-
+var menuStatus = false;
 
 $(document).ready(function(){
-  openMenu();
+  menuToggle();
+
 });
 
-// show mobile menu
+function menuToggle(){
+  $(".navbar-toggle").on("click", function(){ 
+    if(!menuStatus){
+      openMenu();
+      } else {
+        closeMenu();
+      }
+  });
+   showSubmenu();
+
+   // CLose submenu after link click
+   $(".nav-list__item a[href]").on("click", function(){
+    closeMenu();
+   });
+}
+  // Open menu function
 function openMenu(){
-  $(".navbar-toggle").on("click", function(){
-      alert("Yay!");
+     $(".navigation").addClass("navigation__opened");
+     menuStatus = true;
+}
+  // Close menu function
+function closeMenu(){
+     $(".navigation").removeClass("navigation__opened");
+     menuStatus = false;
+}
+  // Show and Hide Submenu
+function showSubmenu(){
+   $("#projects").on("click", function(){
+    $(".navigation-submenu").toggle();
   });
 }
+

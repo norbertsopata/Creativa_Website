@@ -33,6 +33,9 @@
 <!-- CSS implementation -->
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 
+<!-- Font Awesome  -->
+	<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+
 <!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
 
@@ -86,10 +89,29 @@
 	  </div>
 		<nav class="navigation">
 			<ul class="nav-list" id="menu">
-			    <li data-menuanchor="start" class="nav-list__item nav-list__item--style active"><a href="#start">start</a></li>
-			    <li data-menuanchor="projekty" class="nav-list__item nav-list__item--style"><a href="#projekty">projekty</a></li>
-			    <li data-menuanchor="onas" class="nav-list__item nav-list__item--style"><a href="#onas">o nas</a></li>
-			    <li data-menuanchor="kontakt" class="nav-list__item nav-list__item--style"><a href="#kontakt">kontakt</a></li>
+			    <li data-menuanchor="start" class="nav-list__item nav-list__item--style active">
+			    	<a href="#start">start</a>
+			    </li>
+			    <li data-menuanchor="projekty" class="nav-list__item nav-list__item--style" id="projects">
+			    	<a>projekty
+					<span class="arrow-down deskop-hidden">
+			    		<span class="fa fa-arrow-down" aria-hidden="true"></span>
+			    	</span>
+			    	</a>
+			    	
+			    	<ul class="navigation-submenu">
+			    		<li class="navigation-submenu__item-list"><a href="">obiekty mieszkaniowe</a></li>
+			    		<li class="navigation-submenu__item-list"><a href="">usługowe i użyteczności publicznej</a></li>
+			    		<li class="navigation-submenu__item-list"><a href="">obiekty konserwatorskie</a></li>
+			    		<li class="navigation-submenu__item-list"><a href="">wnętrza komercyjne</a></li>
+			    	</ul>
+			    </li>
+			    <li data-menuanchor="onas" class="nav-list__item nav-list__item--style">
+			    	<a href="#onas">o nas</a>
+			    </li>
+			    <li data-menuanchor="kontakt" class="nav-list__item nav-list__item--style">
+			    	<a href="#kontakt">kontakt</a>
+			    </li>
 			</ul>
 		</nav>
 	 </div>

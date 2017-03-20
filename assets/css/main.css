@@ -128,6 +128,10 @@ body{
 
 /*hamburger*/
 
+.deskop-hidden{
+    display: none;
+}
+
 .hamburger{
     display: none;
     position: absolute;
@@ -252,6 +256,33 @@ body{
     color: #fff;
 }
 
+.navigation-submenu{
+    display: none;
+    position: absolute;
+    background: black;
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+}
+
+#projects{
+    cursor: pointer;
+}
+
+#projects:hover .navigation-submenu{
+    display: block;
+}
+
+.navigation-submenu .navigation-submenu__item-list a{
+    color: #bbb;
+}
+
+.navigation-submenu .navigation-submenu__item-list a:hover{
+    color: #fff;
+}
+
+
+
+
 /*First section section background*/
 
 .section{
@@ -352,16 +383,26 @@ body{
     /* Small Devices, Tablets */
     @media only screen and (max-width : 768px) {
 
+       .arrow-down.deskop-hidden{
+            display: flex;
+        }
+
         .sm-only{
             display: flex;
         }
         
+        .wrapper{
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
         .deskop-hidden{
             display: none;
         }
 
         .main-header{
             display: flex;
+            z-index: 9999;
         }
 
         .logo-section{
@@ -373,15 +414,116 @@ body{
         }
 
         .navigation{
-            display: none;
+            position: absolute;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            background: black;
+            left: 0;
+            top: 60px;
+
+            -webkit-transform: translate3d(100%, 0, 0);
+            -moz-transform: translate3d(100%, 0, 0);
+            -ms-transform: translate3d(100% 0, 0);
+            -o-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+
+            transition: all 0.3s ease-in-out;
         }
+
+        .nav-list__item{
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            border-bottom: 1px solid rgba(255, 255 , 255 , 0.3);
+            margin:  0 10px;
+        }
+
+        .nav-list__item a{
+            font-size: 1.2em;
+            letter-spacing: 0px;
+            font-weight: 500;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        
+         .nav-list__item .arrow-down{
+            margin-right: 20px;
+        }
+
+
+         .nav-list__item .fa-arrow-down{
+            display: block;
+            color: white;
     
-
-        .wrapper{
-            padding-left: 10px;
-            padding-right: 10px;
         }
 
+        .nav-list__item--style a{
+            text-transform: uppercase;
+            text-decoration: none;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            letter-spacing: 2px;
+}
+
+        .nav-list__item:hover a,
+        .nav-list__item.active a
+        {
+            color: #fff;
+        }
+
+        .navigation__opened{
+            -webkit-transform: translate3d(0%, 0, 0);
+            -moz-transform: translate3d(0%, 0, 0);
+            -ms-transform: translate3d(0% 0, 0);
+            -o-transform: translate3d(0%, 0, 0);
+            transform: translate3d(0%, 0, 0);
+
+            transition: all 0.3s ease-in-out;
+        }
+
+    
+        .navigation-submenu{
+            display: none;
+            width: 100%;
+            transition: all 0.5s ease-in;
+            position: relative;
+            width: 100%;
+        }
+
+       .navigation-submenu__item-list{
+            display: block;
+            margin:  0 20px;
+       }
+
+        .navigation-submenu__item-list a{
+            font-size: 1em;
+            font-weight: 400;
+            display: block;
+            text-transform: uppercase;
+            color: #bbb;
+            padding: none;
+            text-decoration: none;
+            line-height: 50px;
+            border-bottom: 1px solid rgba(255, 255 , 255 , 0.3);
+       }
+
+        .navigation-submenu__item-list:last-child{
+            border-bottom: 0px solid rgba(255, 255 , 255 , 0);
+       }
+
+        .navigation-submenu__item-list a:hover{
+            color:red;
+       }
+
+        #projects:hover .navigation-submenu{
+            display: none;
+      }
         #start-section{
             background-size: auto 100%;
             -webkit-animation: movebg 20s infinite ease-in-out; /* Safari 4+ */
