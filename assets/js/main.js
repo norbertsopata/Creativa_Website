@@ -1,8 +1,17 @@
 
 var menuStatus = false;
+var windowWidth = $(window).width();
 
 $(document).ready(function(){
+
+  $(window).resize(function(){
+      windowWidth = $(window).width();
+      console.log(windowWidth);
+      return windowWidth;
+  });
+
   menuToggle();
+  showSubmenu();
 
 });
 
@@ -14,8 +23,6 @@ function menuToggle(){
         closeMenu();
       }
   });
-   showSubmenu();
-
    // CLose submenu after link click
    $(".nav-list__item a[href]").on("click", function(){
     closeMenu();
@@ -34,7 +41,12 @@ function closeMenu(){
   // Show and Hide Submenu
 function showSubmenu(){
    $("#projects").on("click", function(){
+    console.log(windowWidth);
+    if(windowWidth <= 800){
     $(".navigation-submenu").toggle();
+  } else {
+    return;
+  }
   });
 }
 
