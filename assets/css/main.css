@@ -260,7 +260,7 @@ body{
 .navigation-submenu{
     display: none;
     position: absolute;
-    background: black;
+    background: rgba(0,0,0,0.7);
     width: 100%;
     transition: all 0.5s ease-in-out;
 }
@@ -275,6 +275,7 @@ body{
 
 .navigation-submenu .navigation-submenu__item-list a{
     color: #bbb;
+    font-weight: 400;
 }
 
 .navigation-submenu .navigation-submenu__item-list a:hover{
@@ -338,15 +339,19 @@ body{
     transform: translate(-50% , -50%);
  }
 
+
  .project-badge a{  
     display: inline-block;
     padding: 40px 40px;
     background: rgba(0,0,0,0.3);
     text-decoration: none;
     cursor: pointer;
+    font-family: 'BenchNine', sans-serif;
  }
 
-
+.project-badge.project-badge--bordered a{
+    border: 5px solid white;
+}
 
  .project-badge__title--style{
    color: white;
@@ -379,6 +384,53 @@ body{
 .footer__text{
     color: #bbb;
     opacity: 0.7;
+}
+
+.section.section-project{
+    padding-left:75px;
+    padding-right:75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-container{
+    max-height: 600px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row nowrap;
+    justify-content: flex-start;
+}
+
+.project-container__description{
+   width: 25%;
+   height: 100%;
+   background: #232323;
+}
+
+
+.project-container__project{
+   width: 75%;
+   height: 100%;
+   background: rgba( 53, 43, 43, 0.8);
+}
+
+
+
+#one:before{
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: url("../../assets/img/main_bg.jpg");
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   z-index: -1;
+   opacity: 0.3;
 }
 
 
