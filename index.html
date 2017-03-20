@@ -60,7 +60,6 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('#fullpage').fullpage({
-              anchors: ['start', 'projekty', 'onas', 'kontakt', 'lastPage'],
               menu: '#menu',
 			  navigation: true,
             });
@@ -92,7 +91,7 @@
 			    <li data-menuanchor="start" class="nav-list__item nav-list__item--style active">
 			    	<a href="#start">start</a>
 			    </li>
-			    <li data-menuanchor="projekty" class="nav-list__item nav-list__item--style" id="projects">
+			    <li data-menuanchor="" class="nav-list__item nav-list__item--style" id="projects">
 			    	<a>projekty
 					<span class="arrow-down deskop-hidden">
 			    		<span class="fa fa-arrow-down" aria-hidden="true"></span>
@@ -120,19 +119,39 @@
 
 <!-- Main content section -->
 	<div id="fullpage">
-	    <div class="section active" id="start-section">
-				
-	    </div>
+	    <main class="section active" id="start-section">
+			
+	    </main>
 
-	    <div class="section flat-section" id="flat-objects">
-	    	
-	    </div>
+	    <main class="section" id="flat-objects">
+	    	<section class="project-badge">
+				<a href="#"><h1 class="project-badge__title project-badge__title--style">obiekty mieszkaniowe</h1></a>
+			</section>	
+	    </main>
 
 
-	    <div class="section" id="section2">
-	       
-	    </div>
+	    <main class="section" id="services-buildings">
+	    	<section class="project-badge">
+				<a href="#"><h1 class="project-badge__title project-badge__title--style">obiekty usługowe i użyteczności publicznej</h1></a>
+			</section>	
+	    </main>
+
+	    <main class="section" id="maintenance">
+	    	<section class="project-badge">
+				<a href="#"><h1 class="project-badge__title project-badge__title--style">obiekty ochrony konserwatorskiej</h1></a>
+			</section>	
+	    </main>
+
+	    <main class="section" id="commercial">
+	    	<section class="project-badge">
+				<a href="#"><h1 class="project-badge__title project-badge__title--style">wnętrza komercyjne</h1></a>
+			</section>	
+	    </main>
 	</div>
+
+	 <footer class="footer">
+	    	<span class="footer__text">Copyright 2016 - Creativa</span>
+	  </footer>
 
 </body>
 </html>
