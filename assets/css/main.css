@@ -304,7 +304,7 @@ body{
     height: 100%;
     background: black;
     opacity: 0.3;
-    z-index: 1;
+    z-index: -1;
     
 }
 
@@ -416,8 +416,6 @@ body{
    background: rgba( 53, 43, 43, 0.8);
 }
 
-
-
 #one:before{
    content: "";
    position: absolute;
@@ -433,6 +431,24 @@ body{
    opacity: 0.3;
 }
 
+.slider-container{
+    width: 100%;
+    height: 100%;
+}
+
+.slider-container div{
+    display: block;
+    background: green;
+    height: 100%;
+    width: 100%;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+.slider-container div:nth-child(2){
+    background: url("../../assets/img/main_bg.jpg");
+}
 
 
 /*===========Animations==============*/
@@ -682,7 +698,31 @@ body{
            letter-spacing: -1px;
          }
 
+         .section.section-project{
+            padding-left:0px;
+            padding-right:0px;
+            
+        }
 
+        .project-container{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-container__description{
+           width: 100%;
+           height: 40vh;
+           background: #232323;
+        }
+
+
+        .project-container__project{
+           width: 100%;
+           height: 60vh;
+           background: rgba( 53, 43, 43, 0.8);
+        }
     
     }
 
