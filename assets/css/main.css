@@ -500,6 +500,10 @@ body{
     flex-direction: row;
     align-items: flex-start;
     padding-top: 60px;
+    margin: 0 auto;
+    max-width: 1600px;
+    padding-left: 75px;
+    padding-right: 75px;
 }
 
 .contact-container .contact-container__left-side{
@@ -905,8 +909,6 @@ body{
             flex-direction: column;
         }
 
-        .contact-section .wrapper{
-            width: auto}
         
 
         .contact-container{
@@ -914,7 +916,9 @@ body{
             height:auto;
             display: flex;
             flex-direction: column;
-            padding-top: 70px;
+            padding-top: 60px;
+            padding-left: 0;
+            padding-right: 0;
         }
 
         .contact-container .contact-container__left-side{
