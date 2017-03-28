@@ -24,18 +24,18 @@
 <!-- Icon -->
 
 	<!-- ICONS -->
-	<link rel="icon" type="image/ico" href="assets/icon/icon.ico">
+	<link rel="icon" type="../../image/ico" href="../../assets/icon/icon.ico">
 	<!-- PNG 16x16 -->
-	<link rel="icon" type="image/png" sizes="16x16" href="assets/icon/icon.png">
+	<link rel="icon" type="../../image/png" sizes="16x16" href="../../assets/icon/icon.png">
 	<!-- PNG 32x32 -->
-	<link rel="icon" type="image/png" sizes="32x32" href="assets/icon/icon32x32.png">
+	<link rel="icon" type="../../image/png" sizes="32x32" href="../../assets/icon/icon32x32.png">
 
 <!-- CSS implementation -->
-	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/css/main.css">
 
 <!-- Font Awesome  -->
-	<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
-
+	<link rel="stylesheet" href="../../assets/font-awesome/css/font-awesome.min.css">
+git a
 <!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=BenchNine:400,700" rel="stylesheet">
@@ -44,13 +44,19 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 
+
+    <link rel="stylesheet" type="text/css" href="../../assets/css/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="../../assets/css/slick-theme.css"/>
+
+	<script type="text/javascript" src="../../assets/js/slick.min.js"></script>
+
 <!-- FullPage CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/css/jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="../../assets/css/jquery.fullPage.css" />
 
 <!-- FullPage JS -->
 	
-	 <script type="text/javascript" src="assets/js/jquery.fullPage.js"></script>
-	 <script type="text/javascript" src="assets/js/main.js"></script>
+	 <script type="text/javascript" src="../../assets/js/jquery.fullPage.js"></script>
+	 <script type="text/javascript" src="../../assets/js/main.js"></script>
 
     <!--[if IE]>
         <script type="text/javascript">
@@ -62,11 +68,17 @@
         $(document).ready(function() {
             $('#fullpage').fullpage({
               menu: '#menu',
-			  navigation: true,
-			  scrollBar: true,
             });
         });
     </script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('.slider').slick({
+
+      });
+    });
+  </script>
 
 </head>
 
@@ -77,8 +89,8 @@
 <header class="main-header">
  	<div class="wrapper">
 	  <div class="logo-section" id="logo">
-	  	<a href="http://architekci-creativa.pl/" class="logo-section__image">
-	  		<img src="assets/img/logo.png" alt="Creativa Logo" class="logo-section__img">
+	  	<a href="" class="logo-section__image">
+	  		<img src="../../assets/img/logo.png" alt="Creativa Logo" class="logo-section__img">
 	  	</a>
 	  </div>
 	  <div class="hamburger sm-only">
@@ -91,7 +103,7 @@
 		<nav class="navigation">
 			<ul class="nav-list" id="menu">
 			    <li data-menuanchor="start" class="nav-list__item nav-list__item--style active">
-			    	<a href="http://architekci-creativa.pl/">start</a>
+			    	<a href="#start">start</a>
 			    </li>
 			    <li data-menuanchor="" class="nav-list__item nav-list__item--style" id="projects">
 			    	<a>projekty
@@ -101,75 +113,76 @@
 			    	</a>
 			    	
 			    	<ul class="navigation-submenu">
-			    		<li class="navigation-submenu__item-list"><a href="projekty/obiekty-mieszkaniowe/">obiekty mieszkaniowe</a></li>
-			    		<li class="navigation-submenu__item-list"><a href="projekty/usługowe/">usługowe i użyteczności publicznej</a></li>
-			    		<li class="navigation-submenu__item-list"><a href="projekty/obiekty-konserwatorskie/">obiekty konserwatorskie</a></li>
-			    		<li class="navigation-submenu__item-list"><a href="projekty/obiekty-komercyjne/">wnętrza komercyjne</a></li>
+			    		<li class="navigation-submenu__item-list"><a href="">obiekty mieszkaniowe</a></li>
+			    		<li class="navigation-submenu__item-list"><a href="">usługowe i użyteczności publicznej</a></li>
+			    		<li class="navigation-submenu__item-list"><a href="">obiekty konserwatorskie</a></li>
+			    		<li class="navigation-submenu__item-list"><a href="">wnętrza komercyjne</a></li>
 			    	</ul>
 			    </li>
 			    <li data-menuanchor="onas" class="nav-list__item nav-list__item--style">
-			    	<a href="onas/">o nas</a>
+			    	<a href="#onas">o nas</a>
 			    </li>
 			    <li data-menuanchor="kontakt" class="nav-list__item nav-list__item--style">
-			    	<a href="kontakt/">kontakt</a>
+			    	<a href="../../kontakt/index.html">kontakt</a>
 			    </li>
 			</ul>
 		</nav>
 	 </div>
 </header>
-
-
 <!-- Main content section -->
+
 	<div id="fullpage">
-	    <main class="section active" id="start-section">
-			<ul class="slider">
-				<li class="slider__item">
-					<span></span>
-				</li>
-				<li class="slider__item">
-					<span></span>
-				</li>
-				<li class="slider__item">
-					<span></span>
-				</li>
-				<li class="slider__item">
-					<span></span>
-				</li>
-				<li class="slider__item">
-					<span></span>
-				</li>
-			</ul>
+	<!-- Start project section -->
+	    <main class="section section-project active" id="makuszynskiego">
+	    <!-- Project container -->
+			<div class="project-container">
+				<!-- Left section -->
+					<section class="project-description">
+						<div class="project-description__item">
+							<h2>obiekty mieszkaniowe</h2>
+								<div class="project-description__data">
+									<p><span>Lokalizacja:</span><br> Rzeszów</p>
+									<p><span>Rok opracowania:</span><br> 2015</p>
+									<p><span>Powierzchnia:</span><br> 4047m2</p>
+									<p><span>Inwestor:</span><br> Prywatny</p>
+									<p><span>Zakres:</span><br> Projekt wykonawczy</p>
+									<p><span>Status:</span><br> Pozwolenie na budowę 2015</p>
+								</div>
+						</div>
+					</section>
+				<!--End Left section -->
+
+				<!-- Right section -->
+					<section class="project-slider" id="">
+					<!-- Slider -->
+						<div class="slider">
+							 <div class="slider__item"></div>
+		 					 <div class="slider__item"></div>
+		  					 <div class="slider__item"></div>
+	  					</div>
+					<!--End Slider -->
+					</section>
+
+				<!--End Right section -->
+			 	</div>
 	    </main>
 
-	    <main class="section" id="flat-objects">
-	    	<section class="project-badge project-badge--bordered">
-				<a href="projekty/obiekty-mieszkaniowe/"><h2 class="project-badge__title project-badge__title--style">obiekty mieszkaniowe</h2></a>
-			</section>	
-	    </main>h2
-
-
-	    <main class="section" id="services-buildings">
-	    	<section class="project-badge project-badge--bordered">
-				<a href="projekty/usługowe/" class=""><h2 class="project-badge__title project-badge__title--style">obiekty usługowe i użyteczności publicznej</h2></a>
-			</section>	
+	  <!-- End project section -->
+	    <main class="section section-project" id="">
+			
+	    </main>
+	    <main class="section section-project" id="">
+			
+	    </main>
+	    <main class="section section-project" id="">
+			
+	    </main>
+	    <main class="section section-project" id="">
+			
 	    </main>
 
-	    <main class="section " id="maintenance">
-	    	<section class="project-badge project-badge--bordered">
-				<a href="projekty/obiekty-konserwatorskie/"><h2 class="project-badge__title project-badge__title--style">obiekty ochrony konserwatorskiej</h2></a>
-			</section>	
-	    </main>
-
-	    <main class="section" id="commercial">
-	    	<section class="project-badge project-badge--bordered">
-				<a href="projekty/obiekty-komercyjne/"><h2 class="project-badge__title project-badge__title--style">wnętrza komercyjne</h2></a>
-			</section>	
-	    </main>
+	   
 	</div>
-
-	 <footer class="footer">
-	    	<span class="footer__text">Copyright 2016 - Creativa</span>
-	  </footer>
 
 </body>
 </html>
