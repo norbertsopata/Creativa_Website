@@ -706,7 +706,7 @@ body{
 }
 
 .contact-container__contact{
-    font-size: 4em;
+    font-size: 3em;
     color:white;
 }
 
@@ -749,6 +749,13 @@ body{
 
 /*Contact Form*/
 
+.contact-container__contact-form{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 .contact-form{
     width: 100%;
     height: auto;
@@ -763,16 +770,27 @@ body{
 
 .contact-form__section label{
   display: block;
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
+
+.contact-form__section input[type=text]:focus,
+.contact-form__section input[type=email]:focus,
+.contact-form__section textarea:focus{
+  outline: none;
+  border-color: red;
+}
+
 
 .contact-form__section input[type=text],
 .contact-form__section input[type=email],
 .contact-form__section textarea,
 .contact-form__section button{
+    color: white;
+    font-weight: 400;
+    letter-spacing: 1px;
     box-sizing: border-box;
     border-radius: 5px;
-    padding: 5px 0;
+    padding: 5px 10px;
     display: block;
     width: 100%;
     background: #232323;
@@ -788,6 +806,7 @@ body{
 .contact-form__section textarea{
     height: 10em;
     resize: none;
+    letter-spacing: 0px;
 }
 
 .contact-form__section button{
@@ -799,6 +818,12 @@ body{
   cursor: pointer;
   margin: 20px 0;
   padding: 10px 30px;
+  transition: all 0.2s ease-in-out;
+}
+
+.contact-form__button:hover{
+  background: white;
+  color: #232323;
 }
 
 
