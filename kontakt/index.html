@@ -148,7 +148,32 @@
 								</ul>
 						</div>
 					</div>
-					<div class="contact-container__contact-form">dsad</div>
+					<div class="contact-container__contact-form">
+
+					<!-- Contact form -->
+						<form class="contact-form" method="post" action="">
+								<div class="contact-form__section">
+									<lavel for="field-name" class="name-label">Imię i Nazwisko</label>
+									<input type="text" name="name" required id="field-name" data-error="Popraw to pole" pattern="[a-zA-ZąĄććęęłŁńŃóÓśŚżŻŹŹ ]+">
+								</div>
+
+								<div class="contact-form__section">
+									<lavel for="field-email" class="email-label">Email:</label>
+									<input type="email" name="email" required id="field-email" data-error="Popraw to pole" pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
+								</div>
+
+								<div class="contact-form__section">
+									<label for="field-message" class="message-label">
+									<textarea name="message" required id="field-message" data-error="Musisz wypełnić to pole" pattern=".+"></textarea>
+								</div>
+
+								<div class="contact-form__section">
+									<button type="submit" class="contact-form__button">Wyślij</button>
+								</div>
+						</form>
+
+						<!-- End Contact Form -->
+					</div>
 				</div>
 			<!-- Right side -->
 				<div class="contact-container__right-side">
