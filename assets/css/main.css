@@ -685,11 +685,13 @@ body{
 }
 
 .contact-container .contact-container__left-side{
+    box-sizing: border-box;
     height: 100%;
     width: 40%;
     background: rgba(0,0,0, 0.4);
     display: flex;
     flex-direction: column;
+    padding: 20px;
 }
 
 .contact-container .contact-container__right-side{
@@ -701,7 +703,6 @@ body{
 .contact-container__data{
     height: auto;
     width: 100%;
-    padding: 20px;
 }
 
 .contact-container__contact{
@@ -710,7 +711,6 @@ body{
 }
 
 .contact-container__data{
-    background: rgba(0,0,0,0.3);
 }
 
 .contact-container__data ul{
@@ -746,6 +746,64 @@ body{
     height: 100%;
     background: pink;
 }
+
+/*Contact Form*/
+
+.contact-form{
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: white;
+}
+
+.contact-form__section{
+}
+
+.contact-form__section label{
+  display: block;
+  font-size: 1.2em;
+}
+
+.contact-form__section input[type=text],
+.contact-form__section input[type=email],
+.contact-form__section textarea,
+.contact-form__section button{
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 5px 0;
+    display: block;
+    width: 100%;
+    background: #232323;
+    margin: 10px 0;
+    border: 2px dotted white;
+    box-shadow: none;
+}
+
+.contact-form__section input{
+  padding:5px;
+}
+
+.contact-form__section textarea{
+    height: 10em;
+    resize: none;
+}
+
+.contact-form__section button{
+  text-transform: uppercase;
+  font-family: inherit;
+  font-weight: 600;
+  color: white;
+  width: 40%;
+  cursor: pointer;
+  margin: 20px 0;
+  padding: 10px 30px;
+}
+
+
+
+
 
 /*About*/
 
