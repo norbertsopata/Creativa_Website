@@ -41,9 +41,7 @@
 	<link href="https://fonts.googleapis.com/css?family=BenchNine:400,700" rel="stylesheet">
 
 <!-- JQuery -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>  
 
     <link rel="stylesheet" type="text/css" href="../assets/css/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="../assets/css/slick-theme.css"/>
@@ -142,36 +140,43 @@
 								<ul>
 									<li><p>tel. +48 696 054 820 </p></li>
 									<li><p>tel. +48 604 756 888</p></li>
-									<li><p>@creativa.pl</p></li>
+									<li><p>biuro.creativa@gmail.com</p></li>
 									<li><p>35-051 Rzeszów, ul. Lenartowicza 27/4</p></li>
 									<li><p>813-123-09-28</p></li>
 								</ul>
 						</div>
 					</div>
 					<div class="contact-container__contact-form">
+
 					<!-- Contact form -->
-						<form class="contact-form" method="post" action="">
-								<div class="contact-form__section">
-									<label for="field-name" class="name-label">Imię i Nazwisko</label>
-									<input type="text" name="name" required id="field-name" data-error="Popraw to pole" pattern="[a-zA-ZąĄććęęłŁńŃóÓśŚżŻŹŹ ]+">
-								</div>
-
-								<div class="contact-form__section">
-									<label for="field-email" class="email-label">Email:</label>
-									<input type="email" name="email" required id="field-email" data-error="Popraw to pole" pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
-								</div>
-
-								<div class="contact-form__section">
-									<label for="field-message" class="message-label">Wpisz wiadomość</label>
-									<textarea name="message" required id="field-message" data-error="Musisz wypełnić to pole" pattern=".+"></textarea>
-								</div>
-
-								<div class="contact-form__section">
-									<button type="submit" class="contact-form__button">Wyślij</button>
-								</div>
-						</form>
-
-						<!-- End Contact Form -->
+					<form class="form" id="contactForm" method="post" novalidate action="send-script.php">
+					    <div class="form-row">
+					        <label for="field-name">Name*</label>
+					        <input type="text" name="name" required id="field-name" data-error="Wypełnij to pole" pattern="[a-zA-ZąĄććęęłŁńŃóÓśŚżŻŹŹ ]+">
+					    </div>
+					    <div class="form-row">
+					        <label for="field-email">Email*</label>
+					        <input type="email" name="email" required id="field-email" data-error="Wpisz poprawny email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
+					    </div>
+					    <div class="form-row">
+					        <label for="field-message">Message*</label>
+					        <textarea name="message" required data-error="Musisz wypełnić pole" id="field-message" pattern=".+"></textarea>
+					    </div>
+					    <div class="form-row">
+					        <label class="checkbox-cnt">
+					            <input type="checkbox" required data-error="Musisz wypełnić pole" name="regulation">
+					            <i class="state" aria-hidden="true"></i>
+					            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In libero arcu, vulputate sit amet mattis sit amet, ultrices in erat. Aenean suscipit arcu ac lorem lacinia ut scelerisque turpis commodo.</span>
+					        </label>
+					    </div>
+					    <div class="form-row">
+					        <button type="submit" class="submit-btn">
+					            Wyślij
+					        </button>
+					    </div>
+					</form>
+						
+					<!-- End Contact Form -->
 					</div>
 				</div>
 			<!-- Right side -->
@@ -183,7 +188,7 @@
 	    </main>
 
 	 <footer class="contact-section__footer">
-	    	<span class="footer__text">Copyright 2016 - Creativa</span>
+	    	<span class="footer__text">Copyright by Creativa - Studio Architektury i Budownictwa</span>
 	 </footer>
 	  <!-- End contact section -->
 <script>
@@ -207,6 +212,119 @@
       
       }
     </script>
+
+	<script>
+    $(function() {
+        var $inputs = $('form input[required], form textarea[required], select[required]');
+
+        var displayFieldError = function($elem) {
+            var $fieldRow = $elem.closest('.form-row');
+            var $fieldError = $fieldRow.find('.field-error');
+            if (!$fieldError.length) {
+                var errorText = $elem.attr('data-error');
+                var $divError = $('<div class="field-error">' + errorText + '</div>');
+                $fieldRow.append($divError);
+            }
+        };
+
+        var hideFieldError = function($elem) {
+            var $fieldRow = $elem.closest('.form-row');
+            var $fieldError = $fieldRow.find('.field-error');
+            if ($fieldError.length) {
+                $fieldError.remove();
+            }
+        };
+
+        $inputs.on('input', function() {
+            var $elem = $(this);
+            if (!$elem.get(0).checkValidity()) {
+                $elem.addClass('error');
+            } else {
+                $elem.removeClass('error');
+                hideFieldError($elem);
+            }
+        });
+
+        $inputs.filter(':checkbox').on('click', function() {
+            var $elem = $(this);
+            var $row = $(this).closest('.form-row');
+            if ($elem.is(':checked')) {
+                $elem.removeClass('error');
+                hideFieldError($elem);
+            } else {
+                $elem.addClass('error');
+            }
+        });
+
+        var checkFieldsErrors = function() {
+            //ustawiamy zmienną na true. Następnie robimy pętlę po wszystkich polach
+            //jeżeli któreś z pól jest błędne, przełączamy zmienną na false.
+            var fieldsAreValid = true;
+            $inputs.each(function(i, elem) {
+                var $elem = $(elem);
+                //if (new RegExp(pattern).test($elem.val())) {
+                if (elem.checkValidity()) {
+                    hideFieldError($elem);
+                    $elem.removeClass('error');
+                } else {
+                    displayFieldError($elem);
+                    $elem.addClass('error');
+                    fieldsAreValid = false;
+                }
+            });
+            return fieldsAreValid;
+        };
+
+        $('.form').on('submit', function(e) {
+            e.preventDefault();
+
+            var $form = $(this);
+
+            if (checkFieldsErrors($inputs)) {
+                var dataToSend = $form.serializeArray();
+                
+                dataToSend = {
+					    name : $form.find('input[name="name"']).val(),
+					    email : $form.find('input[name="email"']).val(),
+					    message : $form.find('textarea[name="message"']).val()
+					};
+
+                var $submit = $form.find(':submit');
+                $submit.prop('disabled', 1);
+                $submit.addClass('element-is-busy');
+
+                $.ajax({
+                    url : $form.attr('action'),
+                    method: $form.attr('method'),
+                    dataType : 'json',
+                    data : dataToSend,
+                    success: function(ret) {
+                        if (ret.errors) {
+                            ret.errors.map(function(el) {
+                                return '[name="'+el+'"]'
+                            });
+                            checkFieldsErrors($form.find(ret.errors.join(',')));
+                        } else {
+                            if (ret.status=='ok') {
+                                $form.replaceWith('<div class="form-send-success"><strong>Wiadomość została wysłana</strong><span>Dziękujemy za kontakt. Postaramy się odpowiedzieć jak najszybciej</span></div>');
+                            }
+                            if (ret.status=='error') {
+                                $submit.after('<div class="send-error">Wysłanie wiadomości się nie powiodło</div>');
+                            }
+                        }
+                    },
+                    error : function() {
+                        console.error('Wystąpił błąd z połączeniem');
+                    },
+                    complete: function() {
+                        $submit.prop('disabled', 0);
+                        $submit.removeClass('element-is-busy');
+                    }
+                });
+            }
+        })
+    })
+</script>
 
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3LBlHhJtcwhH6cn3fUyo7Nxspcio7A_4&callback=initMap"></script>
     <script src="../assets/js/googlemapsstyle.js"></script>
